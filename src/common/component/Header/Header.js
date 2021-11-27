@@ -3,8 +3,10 @@ import styles from './headerPage.module.css'
 
 function Header() {
     return (
-      <div className="header">
-          <p>Header</p>
+      <div className={styles.header}>
+        <div className={styles.whatsapp}>
+          <p>Recetas AGRO</p>
+        </div>
       </div>
     );
   }

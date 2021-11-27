@@ -3,6 +3,7 @@ import './App.css';
 import Footer from './common/component/Footer/footer';
 import Header from './common/component/Header/Header';
 import Conversacion from './view/conversacion/conversacion';
+import Bot from './view/bot/bot';
 
 function App() {
   return (
@@ -10,8 +11,8 @@ function App() {
       <div className="header">
         <Header/>
       </div>
-      <div className="conversacion">
-        <Conversacion/>
+      <div>
+        <Bot/>
       </div>
       <div className="footer">
         <Footer/>
