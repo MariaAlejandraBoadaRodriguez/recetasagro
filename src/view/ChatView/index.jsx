@@ -1,7 +1,7 @@
 import React from 'react'
-import Footer from './common/component/Footer/footer';
-import Header from './common/component/Header/Header';
-import Bot from './view/bot/bot';
+import Footer from '../../common/component/Footer';
+import Header from '../../common/component/Header';
+import Bot from '../../view/bot/bot';
 
 const ChatView = () => {
   return (

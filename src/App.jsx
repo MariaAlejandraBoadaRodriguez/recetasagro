@@ -1,11 +1,12 @@
 import React from 'react'
-import ChatView from './ChatView'
+import ChatView from './view/ChatView'
+import ChatProvider from './context/ChatContext';
 
 function App() {
   return (
-    <div>
+    <ChatProvider>
       <ChatView/>
-    </div>
+    </ChatProvider>
   );
 }
 
