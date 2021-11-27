@@ -1,11 +1,9 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
 import Footer from './common/component/Footer/footer';
 import Header from './common/component/Header/Header';
-import Conversacion from './view/conversacion/conversacion';
 import Bot from './view/bot/bot';
 
-function App() {
+const ChatView = () => {
   return (
     <div className="App">
       <div className="header">
@@ -18,7 +16,7 @@ function App() {
         <Footer/>
       </div>
     </div>
-  );
+  )
 }
 
-export default App;
+export default ChatView
