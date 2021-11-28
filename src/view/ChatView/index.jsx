@@ -1,7 +1,7 @@
 import React from 'react'
+import Chat from '../../common/component/Chat';
 import Footer from '../../common/component/Footer';
 import Header from '../../common/component/Header';
-import Bot from '../../view/bot/bot';
 
 const ChatView = () => {
   return (
@@ -10,11 +10,9 @@ const ChatView = () => {
         <Header/>
       </div>
       <div>
-        <Bot/>
+        <Chat/>
       </div>
-      <div className="footer">
         <Footer/>
-      </div>
     </div>
   )
 }

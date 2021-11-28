@@ -1,15 +1,49 @@
-import React, { createContext, useState } from 'react'
+import React, { createContext, useState, useEffect } from 'react'
 
 export const ChatContext = createContext();
 
+/*
+setMessages(currentMessages => currentMessages.concat({
+          message: 'que más', 
+          type: 'USER'
+        },
+        {
+          message: 'hola', 
+          type: 'BOT'
+        },
+        {
+          message: 'Soy pepebot', 
+          type: 'USER'
+        }
+      ))
+*/
+
 const ChatProvider = ({children}) => {
-  const [ mensajes, setMensajes ] = useState([])
-  const [opciones, setOpciones] = useState([])
+  const [ opciones, setOpciones ] = useState([])
+  const [ messages, setMessages ] = useState([])
+
+  useEffect(() => {
+    setMessages([
+      {
+        message: 'hola', 
+        type: 'BOT'
+      },
+      {
+        message: 'hola', 
+        type: 'USER'
+      },
+      {
+        message: 'Soy pepebot', 
+        type: 'BOT'
+      },
+    ])
+  }, [])
+
 
 
   const chatContext =  {
-    mensajes,
-    setMensajes,
+    messages,
+    setMessages,
     opciones,
     setOpciones
   }
