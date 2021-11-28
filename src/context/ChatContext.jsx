@@ -1,4 +1,5 @@
-import React, { createContext, useState, useEffect } from 'react'
+import React, { createContext, useState, } from 'react'
+
 
 export const ChatContext = createContext();
 
@@ -19,33 +20,26 @@ setMessages(currentMessages => currentMessages.concat({
 */
 
 const ChatProvider = ({children}) => {
-  const [ opciones, setOpciones ] = useState([])
+  const [ options, setOptions ] = useState([])
+  const [ currentElection, setCurrentElection ] = useState({
+    type: 'welcome'
+  })
   const [ messages, setMessages ] = useState([])
-
-  useEffect(() => {
-    setMessages([
-      {
-        message: 'hola', 
-        type: 'BOT'
-      },
-      {
-        message: 'hola', 
-        type: 'USER'
-      },
-      {
-        message: 'Soy pepebot', 
-        type: 'BOT'
-      },
-    ])
-  }, [])
-
-
+  const [ foodType, setFoodType ] = useState('lunch')
+  const [ getRecipes, setGetRecipes ] = useState(false)
 
   const chatContext =  {
     messages,
     setMessages,
-    opciones,
-    setOpciones
+    options,
+    setOptions,
+    currentElection,
+    setCurrentElection,
+    foodType,
+    setFoodType,
+    getRecipes,
+    setGetRecipes
+    
   }
   return (
     <ChatContext.Provider value={chatContext}>

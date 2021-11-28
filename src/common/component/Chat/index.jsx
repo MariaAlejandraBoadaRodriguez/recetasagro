@@ -1,21 +1,27 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect, } from 'react'
 import BotMessage from './BotMessage'
 import UserMessage from './UserMessage'
 import styles from './Chat.module.css'
 import { ChatContext } from '../../../context/ChatContext'
+import useElectionHandler from '../../../hooks/useElectionHandler'
+import useGetRecipes from '../../../hooks/useGetRecipes'
+
 
 const Chat = () => {
   const { chatContainer } = styles
-  const { messages, } = useContext(ChatContext)
+  const { messages, foodType, currentElection } = useContext(ChatContext)
 
-  useEffect(() => {
-    console.log('Esto es manasas');
-    console.log(messages);
-  }, [messages])
+  useElectionHandler()
+  useGetRecipes()
 
 
   return (
     <div className={chatContainer}>
+      <h3>Food type</h3>
+      {foodType}
+      <h3>current election</h3>
+      {JSON.stringify(currentElection)}
+
       {messages?.map((_message, index) => {
         const { type, message } = _message
         const key = `${index}-${type}`
